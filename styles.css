@@ -1,1 +1,252 @@
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef; /* Light gray background */
+            color: #333; /* Dark text */
+        }
 
+    .login-container {
+        text-align: center;
+        margin: 50px auto; /* Center the login form */
+        max-width: 400px; /* Limit max width for better appearance */
+        padding: 20px; /* Add padding inside the container */
+        background-color: #fff; /* White background for the container */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    .login-input {
+        padding: 12px; /* Increased padding for comfort */
+        width: 100%; /* Full width for better alignment */
+        max-width: 400px; /* Limit width for larger input */
+        margin: 15px auto; /* Center input and add space */
+        border: 1px solid #007BFF; /* Border matching the button */
+        border-radius: 4px;
+        outline: none;
+        transition: all 0.3s ease;
+        font-size: 1.5em; /* Larger font size for easy reading */
+        text-align: center; /* Center text inside the input */
+    }
+
+    .login-input:focus {
+        border-color: #0056b3; /* Darker blue on focus */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .login-button {
+        padding: 12px; /* Increased padding */
+        width: 100%; /* Full width for button */
+        border: none;
+        border-radius: 4px;
+        background-color: #007BFF; /* Vibrant blue */
+        color: white;
+        font-weight: bold;
+        font-size: 1.1em; /* Slightly larger font */
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .login-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    .small-title {
+        font-size: 0.85em; /* Slightly smaller font size for titles */
+        margin-top: 10px; /* Margin above small titles */
+        font-weight: normal; /* Normal weight for small titles */
+        color: #666; /* Gray color for small titles */
+    }
+
+    .fillout-container {
+        display: flex;            /* Use flexbox for centering */
+        justify-content: center;  /* Center horizontally */
+        align-items: center;      /* Center vertically (if you have a specific height) */
+        height: 10vh;            /* Optional: Use full viewport height */
+    }
+
+    .fillout-container div {
+        margin: auto;            /* Optional: Add margin for additional spacing */
+    }
+
+        .card-container {
+            display: flex; /* Use flexbox to align cards */
+            justify-content: space-between; /* Space between cards */
+            margin-bottom: 20px; /* Margin below cards */
+            max-width: 1200px; /* Max width for the cards */
+            margin: 20px auto; /* Center the cards */
+            display: none; /* Hide by default */
+        }
+    
+        .card {
+            flex: 1; /* Each card takes equal space */
+            margin: 0 10px; /* Margin on the sides of cards */
+            padding: 16px; /* Reduced padding */
+            background-color: #fff; /* White background for cards */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            text-align: center; /* Center the text */
+            font-weight: bold; /* Make text bold */
+            font-size: 1em; /* Adjusted font size */
+            transition: transform 0.3s ease;
+        }
+    
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+    
+        .table-container {
+            width: 100%; /* Set width to 100% */
+            max-width: 1200px; /* Set the same max-width as cards */
+            margin: 20px auto; /* Center the table */
+            border-radius: 8px;
+            overflow: hidden; /* To round corners on the table */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            display: none; /* Hide by default */
+        }
+    
+        .table-header {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            background: linear-gradient(135deg, #A0C4FF 30%, #B9E6FF 100%); /* Gradient header */
+            color: #333; /* Dark text for contrast */
+            padding: 8px; /* Reduced padding */
+            border-bottom: 2px solid #ddd; /* Divider */
+        }
+    
+        .header-cell {
+            font-weight: bold;
+            text-align: center;
+            padding: 8px; /* Reduced padding */
+            font-size: 0.9em; /* Slightly smaller font size */
+        }
+    
+        .table-row {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            background: #fff; /* White background for rows */
+            border-bottom: 1px solid #ddd; /* Row divider */
+            padding: 8px; /* Reduced padding */
+            transition: background 0.3s ease;
+        }
+    
+        .table-row:hover {
+            background-color: #f1f1f1; /* Light gray on hover */
+        }
+    
+        .table-cell {
+            padding: 8px; /* Reduced padding */
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+        }
+    
+        .table-cell-highlight {
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+            background-color: #A0C4FF;
+            padding: 5px 10px;              /* Padding to create space around the text */
+            border-radius: 12px;            /* Rounded corners */
+            display: inline-block;          /* Make the background wrap around the text */
+            white-space: nowrap;            /* Prevent text from wrapping to a new line */
+            margin: 5px 0;                  /* Add margin to give vertical spacing */
+            font-weight: bold
+        }
+
+        .red {
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+            background-color: #f79f9f;
+            padding: 5px 10px;              /* Padding to create space around the text */
+            border-radius: 12px;            /* Rounded corners */
+            display: inline-block;          /* Make the background wrap around the text */
+            white-space: nowrap;            /* Prevent text from wrapping to a new line */
+            margin: 5px 0;                  /* Add margin to give vertical spacing */
+            font-weight: bold
+        }
+        
+        .blue {
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+            background-color: #89a6ff;
+            padding: 5px 10px;              /* Padding to create space around the text */
+            border-radius: 12px;            /* Rounded corners */
+            display: inline-block;          /* Make the background wrap around the text */
+            white-space: nowrap;            /* Prevent text from wrapping to a new line */
+            margin: 5px 0;                  /* Add margin to give vertical spacing */
+            font-weight: bold
+        }
+
+        .yellow {
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+            background-color: #92e98a;
+            padding: 5px 10px;              /* Padding to create space around the text */
+            border-radius: 12px;            /* Rounded corners */
+            display: inline-block;          /* Make the background wrap around the text */
+            white-space: nowrap;            /* Prevent text from wrapping to a new line */
+            margin: 5px 0;                  /* Add margin to give vertical spacing */
+            font-weight: bold
+        }
+
+        .green {
+            text-align: center;
+            border-right: 1px solid #ddd; /* Cell border */
+            font-size: 0.9em;
+            background-color: #1cc953;
+            padding: 5px 10px;              /* Padding to create space around the text */
+            border-radius: 12px;            /* Rounded corners */
+            display: inline-block;          /* Make the background wrap around the text */
+            white-space: nowrap;            /* Prevent text from wrapping to a new line */
+            margin: 5px 0;                  /* Add margin to give vertical spacing */
+            font-weight: bold
+        }
+
+        .table-cell:last-child {
+            border-right: none; /* Remove right border on last cell */
+        }
+    
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .table-header, .table-row {
+                grid-template-columns: repeat(2, 1fr); /* Stack on smaller screens */
+            }
+    
+            .header-cell, .table-cell {
+                font-size: 0.8em; /* Smaller font size on mobile */
+            }
+    
+            .card-container {
+                flex-direction: column; /* Stack cards on small screens */
+            }
+    
+            .card {
+                margin-bottom: 20px; /* Space between stacked cards */
+            }
+        }
+    
+        .small-title {
+            font-size: 0.85em; /* Slightly smaller font size for titles */
+            margin-top: 10px; /* Margin above small titles */
+            font-weight: normal; /* Normal weight for small titles */
+            color: #666; /* Gray color for small titles */
+        }
+    
+        .fillout-container {
+            display: none;            /* Use flexbox for centering */
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically (if you have a specific height) */
+            height: 10vh;            /* Optional: Use full viewport height */
+        }
+    
+        .fillout-container div {
+            margin: auto;            /* Optional: Add margin for additional spacing */
+        }
+    </style>
